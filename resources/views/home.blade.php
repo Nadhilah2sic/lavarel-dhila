@@ -81,8 +81,9 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <h1> {{ $username}} </h1>
-        <p> {{$last_login}} </p>
+        <div class="container">
+        <h1> {{$username}} </h1>
+        <P> {{$last_login}} </p>
         </div>
     </section>
 
@@ -153,29 +154,28 @@
 
             <div class="col-md-6">
                 <div class="card">
-    <div class="card-body">
-       ...
-<h5 class="card-title">Form Pertanyaan</h5>
-<form action="{{ route('question.store') }}" method="POST">
-	@csrf
-	
-...
-            <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                <textarea class="form-control" rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
-        </form>
-    </div>
-</div>
+                <div class="card-body">
+                    <h5 class="card-title">Form Pertanyaan</h5>
+                    <form action="{{ route('question.store') }}" method="POST">
+                    @csrf
+    
+                    <form action="" method="POST">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="nama">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                            <textarea class="form-control" name="pertanyaan" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                    </form>
+                </div>
+`           </div>
                 {{-- Alerts --}}
                 <div class="card ">
                     <div class="card-body">
@@ -233,7 +233,6 @@
                                         <td>Cici</td>
                                         <td>Editor</td>
                                         <td><span class="badge text-bg-warning">Pending</span></td>
-                                        
                                     </tr>
                                 </tbody>
                             </table>
