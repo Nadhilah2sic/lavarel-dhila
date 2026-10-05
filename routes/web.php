@@ -6,6 +6,13 @@ use App\Http\Controllers\MahasiswaController;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\QuestionController;
+
+// 1. Route untuk MENAMPILKAN Form (Buka di browser)
+Route::get('/', [QuestionController::class, 'index'])->name('home');
+
+// 2. Route untuk MEMPROSES/KIRIM Form ketika tombol diklik
+Route::post('/question', [QuestionController::class, 'store'])->name('question.store');
 
 Route::get('/', function () {
     return view ('welcome');
@@ -41,3 +48,5 @@ Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
 Route::resource('matakuliah', MatakuliahController::class);
 
 Route::get('/home', [HomeController:: class, 'index']);
+Route::post('question/store', [QuestionController::class, 'store'])
+		->name('question.store');
